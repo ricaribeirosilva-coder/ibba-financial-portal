@@ -1,9 +1,14 @@
 import { Outlet } from "react-router-dom";
+import Sidebar from "../../components/shell/Sidebar";
+import styles from "./CreditCycleLayout.module.css";
+
 export default function CreditCycleLayout() {
   return (
-    <main style={{ padding: 32 }}>
-      <h1>Credit Cycle</h1>
-      <Outlet />
-    </main>
+    <div className={styles.wrap}>
+      <Sidebar />
+      <div className={styles.content}>
+        <Outlet />
+      </div>
+    </div>
   );
 }
