@@ -1,5 +1,5 @@
-import {
-  DEFAULT_THREE_LAYERS_STATE,
+import { DEFAULT_THREE_LAYERS_STATE } from "./types";
+import type {
   HistoricalCycle,
   RangePreset,
   ThreeLayersState,

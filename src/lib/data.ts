@@ -1,4 +1,4 @@
-import { Manifest, SeriesPoint, DivergenceFile } from "./types";
+import type { Manifest, SeriesPoint, DivergenceFile } from "./types";
 
 const BASE = "/data";
 

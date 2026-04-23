@@ -9,7 +9,7 @@ const manifestFixture = {
 
 beforeEach(() => {
   _resetCache();
-  global.fetch = vi.fn(async (input: RequestInfo | URL) => {
+  globalThis.fetch = vi.fn(async (input: RequestInfo | URL) => {
     const url = String(input);
     if (url.endsWith("/data/manifest.json")) return new Response(JSON.stringify(manifestFixture));
     if (url.endsWith("/data/series/a.json")) return new Response(JSON.stringify([{ d: "2020-01", v: 1 }]));
@@ -27,7 +27,7 @@ describe("data loaders", () => {
   it("caches manifest across calls", async () => {
     await loadManifest();
     await loadManifest();
-    expect((global.fetch as unknown as ReturnType<typeof vi.fn>).mock.calls.length).toBe(1);
+    expect((globalThis.fetch as unknown as ReturnType<typeof vi.fn>).mock.calls.length).toBe(1);
   });
 
   it("loads a series by id", async () => {
