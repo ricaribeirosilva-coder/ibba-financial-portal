@@ -1,0 +1,24 @@
+.card {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border-radius: 10px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.layer {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+}
+.value {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 1.5rem;
+  color: var(--color-text);
+}
+.delta { font-size: 0.8125rem; color: var(--color-text-muted); }
+.deltaUp { color: #a43c12; }
+.deltaDown { color: #3d6b3b; }
