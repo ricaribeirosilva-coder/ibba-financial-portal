@@ -1,20 +1,10 @@
-import { Suspense, lazy, useMemo } from "react";
+import { useMemo } from "react";
 import type { Layout, Data } from "plotly.js";
+import createPlotlyComponent from "react-plotly.js/factory";
+import Plotly from "plotly.js-dist-min";
 import styles from "./ChartShape.module.css";
 
-const Plot = lazy(async () => {
-  const [factoryMod, plotlyMod] = await Promise.all([
-    import("react-plotly.js/factory"),
-    import("plotly.js-dist-min"),
-  ]);
-  const createPlotlyComponent =
-    (factoryMod as { default?: unknown }).default ?? factoryMod;
-  const Plotly =
-    (plotlyMod as { default?: unknown }).default ?? plotlyMod;
-  return {
-    default: (createPlotlyComponent as (p: unknown) => React.ComponentType<Record<string, unknown>>)(Plotly),
-  };
-});
+const Plot = createPlotlyComponent(Plotly as unknown as Parameters<typeof createPlotlyComponent>[0]);
 
 export interface ChartShapeProps {
   traces: Data[];
@@ -53,15 +43,13 @@ export function ChartShape({ traces, shapes, yAxisTitle, height = 420 }: ChartSh
 
   return (
     <div className={styles.wrap} style={{ minHeight: height }}>
-      <Suspense fallback={<div className={styles.loading}>Carregando gráfico…</div>}>
-        <Plot
-          data={traces}
-          layout={layout}
-          config={{ displaylogo: false, responsive: true, modeBarButtonsToRemove: ["lasso2d", "select2d"] }}
-          style={{ width: "100%", height: "100%" }}
-          useResizeHandler
-        />
-      </Suspense>
+      <Plot
+        data={traces}
+        layout={layout}
+        config={{ displaylogo: false, responsive: true, modeBarButtonsToRemove: ["lasso2d", "select2d"] }}
+        style={{ width: "100%", height: "100%" }}
+        useResizeHandler
+      />
     </div>
   );
 }
