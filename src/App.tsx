@@ -3,10 +3,12 @@ import Home from "./routes/Home";
 import NotFound from "./routes/NotFound";
 import CreditCycleLayout from "./routes/CreditCycle/CreditCycleLayout";
 import ThreeLayers from "./routes/CreditCycle/curated/ThreeLayers";
+import TopBar from "./components/shell/TopBar";
 
 export default function App() {
   return (
     <BrowserRouter>
+      <TopBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/credit-cycle" element={<CreditCycleLayout />}>
