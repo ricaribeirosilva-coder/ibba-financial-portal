@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "periods": [
+    { "id": "d-2012", "from": "2012-06", "to": "2013-12", "kind": "PTC+compromet_alto", "label": "PTC positiva com comprometimento elevado" },
+    { "id": "d-2015", "from": "2015-03", "to": "2016-09", "kind": "IOF_down+PTC-", "label": "IOF caindo + PTC negativa" },
+    { "id": "d-2022", "from": "2022-03", "to": "2023-06", "kind": "PTC-+compromet_falling", "label": "PTC negativa com comprometimento caindo" }
+  ]
+}

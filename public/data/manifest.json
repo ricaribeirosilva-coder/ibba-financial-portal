@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "generatedAt": "2026-04-23T00:00:00Z",
+  "series": [
+    {
+      "id": "compromet_renda_total",
+      "name": "Comprometimento de renda — total",
+      "layer": "lagging",
+      "unit": "% da renda",
+      "sgs": 29263,
+      "file": "compromet_renda_total.json"
+    },
+    {
+      "id": "inadim_pf_total",
+      "name": "Inadimplência PF — total",
+      "layer": "lagging",
+      "unit": "%",
+      "sgs": 21082,
+      "file": "inadim_pf_total.json"
+    },
+    {
+      "id": "selic_meta",
+      "name": "SELIC meta",
+      "layer": "coincident",
+      "unit": "% a.a.",
+      "sgs": 432,
+      "file": "selic_meta.json"
+    }
+  ]
+}

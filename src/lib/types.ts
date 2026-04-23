@@ -14,3 +14,35 @@ export const DEFAULT_THREE_LAYERS_STATE: ThreeLayersState = {
   range: "5Y",
   divergences: true,
 };
+
+export type Layer = "leading" | "coincident" | "lagging";
+
+export interface SeriesMeta {
+  id: string;
+  name: string;
+  layer: Layer;
+  unit: string;
+  sgs: number;
+  file: string;
+}
+
+export interface Manifest {
+  version: number;
+  generatedAt: string;
+  series: SeriesMeta[];
+}
+
+export interface SeriesPoint { d: string; v: number; }
+
+export interface DivergencePeriod {
+  id: string;
+  from: string;
+  to: string;
+  kind: string;
+  label: string;
+}
+
+export interface DivergenceFile {
+  version: number;
+  periods: DivergencePeriod[];
+}
