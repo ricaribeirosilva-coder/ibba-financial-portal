@@ -1,0 +1,34 @@
+:root {
+  /* Palette — C3 hybrid (editorial voice, clean space) */
+  --color-bg: #f7f5f0;
+  --color-surface: #fbf9f3;
+  --color-surface-strong: #fefcf7;
+  --color-text: #17120d;
+  --color-text-muted: #7a6c5a;
+  --color-text-faint: #a89a82;
+  --color-border: rgba(23, 18, 13, 0.12);
+  --color-border-strong: rgba(23, 18, 13, 0.30);
+  --color-accent: #d84e1d;
+  --color-accent-soft: rgba(216, 78, 29, 0.14);
+
+  /* Type */
+  --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* Scale */
+  --step-0: 0.9375rem;   /* 15 */
+  --step-1: 1.125rem;    /* 18 */
+  --step-2: 1.5rem;      /* 24 */
+  --step-3: 2.25rem;     /* 36 */
+  --step-4: 3.25rem;     /* 52 */
+
+  /* Layout */
+  --topbar-h: 48px;
+  --sidebar-w: 240px;
+  --sidebar-w-collapsed: 56px;
+  --content-max: 1400px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
