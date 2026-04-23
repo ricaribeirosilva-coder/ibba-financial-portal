@@ -2,7 +2,19 @@ import { Suspense, lazy, useMemo } from "react";
 import type { Layout, Data } from "plotly.js";
 import styles from "./ChartShape.module.css";
 
-const Plot = lazy(() => import("react-plotly.js"));
+const Plot = lazy(async () => {
+  const [factoryMod, plotlyMod] = await Promise.all([
+    import("react-plotly.js/factory"),
+    import("plotly.js-dist-min"),
+  ]);
+  const createPlotlyComponent =
+    (factoryMod as { default?: unknown }).default ?? factoryMod;
+  const Plotly =
+    (plotlyMod as { default?: unknown }).default ?? plotlyMod;
+  return {
+    default: (createPlotlyComponent as (p: unknown) => React.ComponentType<Record<string, unknown>>)(Plotly),
+  };
+});
 
 export interface ChartShapeProps {
   traces: Data[];
